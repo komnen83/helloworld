@@ -1,0 +1,7 @@
+package tech.kuba.sda.other;
+
+public enum WeekDay {
+
+    MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+
+}
