@@ -23,7 +23,6 @@ public class PlikFirma {
     public Firma zapis() throws FileNotFoundException {
 
         File plikFirma = new File("plikFirma.txt");
-        Path outputFile = Paths.get("plikFirma.txt");
         PrintWriter writer = new PrintWriter(plikFirma);
 
         writer.write(
