@@ -1,16 +1,18 @@
 package tech.kuba.sda.zarabiajacy;
 
+import java.util.Objects;
+
 public class Pracownik implements Zarabiajacy {
     private String imie;
     private String nazwisko;
     private String stanowisko;
-    private int zarobki;
+    private int wynagrodzenieRoczne;
 
-    public Pracownik(String imie, String nazwisko, String stanowisko, int zarobki) {
+    public Pracownik(String imie, String nazwisko, String stanowisko, int wynagrodzenieRoczne) {
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.stanowisko = stanowisko;
-        this.zarobki = zarobki;
+        this.wynagrodzenieRoczne = wynagrodzenieRoczne;
     }
 
     public String getImie() {
@@ -25,8 +27,8 @@ public class Pracownik implements Zarabiajacy {
         return stanowisko;
     }
 
-    public int getZarobki() {
-        return zarobki;
+    public int getWynagrodzenieRoczne() {
+        return wynagrodzenieRoczne;
     }
 
     @Override
@@ -35,12 +37,12 @@ public class Pracownik implements Zarabiajacy {
                 "imie='" + imie + '\'' +
                 ", nazwisko='" + nazwisko + '\'' +
                 ", stanowisko='" + stanowisko + '\'' +
-                ", zarobki=" + zarobki +
+                ", zarobki=" + wynagrodzenieRoczne +
                 '}';
     }
 
     @Override
-    public int roczneWynagrodzenie() {
-        return zarobki;
+    public int getRoczneWynagrodzenie() {
+        return wynagrodzenieRoczne;
     }
 }

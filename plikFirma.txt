@@ -1,0 +1,6 @@
+Firma: <Microsoft>
+Szef: <Bill Gates>;
+Pracownicy: <3>;
+<Borys Jelcyn>;<7777.0>;
+<Jimmy Hendrix>;<14789.0>;
+<James Bond>;<7979879.0>;
