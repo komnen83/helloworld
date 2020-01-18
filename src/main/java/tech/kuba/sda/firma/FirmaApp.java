@@ -7,14 +7,10 @@ import java.util.List;
 public class FirmaApp {
     public static void main(String[] args) throws IOException {
 
-        Pracownik pracownik1 = new Pracownik("Borys", "Jelcyn", 7777);
-        Pracownik pracownik2 = new Pracownik("Jimmy", "Hendrix", 14789);
-        Pracownik pracownik3 = new Pracownik("James", "Bond", 7979879);
-
         List<Pracownik> listaPracownikow = new ArrayList<>();
-        listaPracownikow.add(pracownik1);
-        listaPracownikow.add(pracownik2);
-        listaPracownikow.add(pracownik3);
+        listaPracownikow.add(new Pracownik("Borys", "Jelcyn", 7777));
+        listaPracownikow.add(new Pracownik("Jimmy", "Hendrix", 14789));
+        listaPracownikow.add(new Pracownik("James", "Bond", 7979879));
 
         Firma firma = new Firma("Microsoft", "Bill Gates", listaPracownikow);
 
