@@ -3,6 +3,8 @@ package tech.kuba.sda;
 public class Zadania1PoziomSredniozaawansowany {
     public static void main(String[] args) {
 
+        printFlagUSA();
+
         System.out.println(power(2, 2));
         System.out.println(power(2, 4));
         System.out.println(power(5, 3));
@@ -18,12 +20,17 @@ public class Zadania1PoziomSredniozaawansowany {
         System.out.println(sumOfDigits(28));
         System.out.println(sumOfDigits(88));
 
-        System.out.println(flagOfUSA() + "\n");
+        System.out.println(factorialRecurency(5) + "\n");
 
-        System.out.println(factorial(5) + "\n");
+        System.out.println("Silnia " + factorial(5) + "\n");
 
-        int[] arr = {1,2,3,4,5,6,7,8,9};
+        System.out.println(calculateSecondsToTime(86410));
+
+        int[] arr = {1, 45, 564, 7867, 34, 5456, 210};
         System.out.println(reverseTable(arr));
+
+        int[] arr1 = {1, 2, 3, 4, 5, 2, 1};
+        System.out.println(palindrom(arr1));
 
     }
 
@@ -52,33 +59,80 @@ public class Zadania1PoziomSredniozaawansowany {
         return decimal + rest;
     }
 
-    public static String flagOfUSA() {
-        int star = 9;
-        int rest = 6;
-        int[][] flag = new int[star][rest];
-        for (int i = 0; i < star; i++) {
-            for (int j = 0; j < rest; j++) {
-                System.out.print("*");
+    public static void printFlagUSA() {
+        int allRows = 15;
+        int starRows = 9;
+        int bottomRest = allRows - starRows; // 6
+        for (int i = 1; i <= 9; i++) {
+            if (i % 2 != 0) {
+                for (int j = 1; j <= 6; j++) {
+                    System.out.print("* ");
+                }
+            } else {
+                for (int m = 1; m <= 5; m++) {
+                    System.out.print(" *");
+                }
+                System.out.print("  ");
             }
-            System.out.println("=");
+            for (int k = 1; k <= 34; k++) {
+                System.out.print("=");
+            }
+
+            System.out.println();
         }
-        System.out.println();
-        return "*";
+        int row = 6;
+        int columns = 46;
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print("=");
+            }
+            System.out.println();
+        }
     }
 
-    static int factorial(int n) {
-        return (n == 0) ? 1 : n * factorial(n - 1);
+
+    public static int factorialRecurency(int n) {
+        return (n == 0) ? 1 : n * factorialRecurency(n - 1);
+    }
+
+    public static int factorial(int n) {
+        int a = 1;
+        if (n == 0) {
+            return a;
+        } else {
+            for (int i = 2; i <= n; i++) {
+                a = a * i;
+            }
+        }
+        return a;
     }
 
     public static String calculateSecondsToTime(int numberOfSeconds) {
-        return " ";
+        int secondsInHour = 3600;
+        int secondsInMinute = 60;
+        int hours = numberOfSeconds / secondsInHour;
+        int minutes = (numberOfSeconds % secondsInHour) / secondsInMinute;
+        int secondsInHourAndMinute = (hours * secondsInHour) + (minutes * secondsInMinute);
+        int seconds = (numberOfSeconds - secondsInHourAndMinute);
+        String time = ("\"" + hours + ":" + minutes + ":" + seconds + "\"");
+        return time;
     }
 
     public static int reverseTable(int[] arr) {
         int result = 0;
-        for (int i = arr.length -1; i >= result; i--) {
+        for (int i = arr.length - 1; i >= result; i--) {
             System.out.print(arr[i] + " ");
         }
         return result;
+    }
+
+    public static boolean palindrom(int[] arr) {
+        if (arr[0] == arr[arr.length - 1]) {
+            for (int i = 0; i < arr.length; i++) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+        return true;
     }
 }
