@@ -1,6 +1,6 @@
-package tech.kuba.sda;
+package tech.kuba.sda.poziomSredniozaawansowany;
 
-public class Zadania1PoziomSredniozaawansowany {
+public class Zadania1 {
     public static void main(String[] args) {
 
         printFlagUSA();
@@ -34,6 +34,7 @@ public class Zadania1PoziomSredniozaawansowany {
 
     }
 
+    //zad.1
     public static long power(int a, int b) {
         int result = a;
         for (int i = 1; i < b; i++) {
@@ -42,6 +43,7 @@ public class Zadania1PoziomSredniozaawansowany {
         return result;
     }
 
+    //zad.2
     public static int multiply(int a, int... b) {
         int result = a;
         for (int i = 0; i < b.length; i++) {
@@ -50,6 +52,7 @@ public class Zadania1PoziomSredniozaawansowany {
         return result;
     }
 
+    //zad.3
     public static int sumOfDigits(int a) {
         int decimal = 0;
         int rest = a % 10;
@@ -59,10 +62,10 @@ public class Zadania1PoziomSredniozaawansowany {
         return decimal + rest;
     }
 
+    //zad. 4
     public static void printFlagUSA() {
         int allRows = 15;
         int starRows = 9;
-        int bottomRest = allRows - starRows; // 6
         for (int i = 1; i <= 9; i++) {
             if (i % 2 != 0) {
                 for (int j = 1; j <= 6; j++) {
@@ -92,10 +95,12 @@ public class Zadania1PoziomSredniozaawansowany {
     }
 
 
+    //zad.5
     public static int factorialRecurency(int n) {
         return (n == 0) ? 1 : n * factorialRecurency(n - 1);
     }
 
+    //zad.5
     public static int factorial(int n) {
         int a = 1;
         if (n == 0) {
@@ -108,6 +113,7 @@ public class Zadania1PoziomSredniozaawansowany {
         return a;
     }
 
+    //zad.6
     public static String calculateSecondsToTime(int numberOfSeconds) {
         int secondsInHour = 3600;
         int secondsInMinute = 60;
@@ -119,6 +125,7 @@ public class Zadania1PoziomSredniozaawansowany {
         return time;
     }
 
+    //zad.7
     public static int reverseTable(int[] arr) {
         int result = 0;
         for (int i = arr.length - 1; i >= result; i--) {
@@ -127,11 +134,16 @@ public class Zadania1PoziomSredniozaawansowany {
         return result;
     }
 
+    //zad.8
     public static boolean palindrom(int[] arr) {
-        if (arr[0] == arr[arr.length - 1]) {
-            for (int i = 0; i < arr.length; i++) {
-                System.out.print(arr[i] + " ");
+        int k = arr.length - 1;
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+            if (arr[i] != arr[k]) {
+                return false;
             }
+            --k;
+;
         }
         return true;
     }
